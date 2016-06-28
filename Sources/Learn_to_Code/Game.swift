@@ -36,10 +36,11 @@ class Game {
     // Game Map.
     
     private var map: [[Object]] = [
-        [.floor, .floor, .floor, .floor],
-        [.floor, .gem, .floor, .floor],
-        [.floor, .floor, .floor, .floor],
-        [.floor, .player, .floor, .floor],
+        [.floor, .floor, .gem, .floor, .floor],
+        [.floor, .floor, .floor, .floor, .floor],
+        [.floor, .floor, .floor, .floor, .floor],
+        [.floor, .floor, .player, .floor, .floor],
+        [.floor, .floor, .floor, .floor, .floor],
     ]
     
     // The object under the player foot.
@@ -73,12 +74,12 @@ class Game {
     // outputs the current state
     
     private func update() {
-        print("------")
+        print("-------")
         map.forEach { (line) in
             let ascii = line.reduce("", combine: { $0 + $1.ascii })
             print("|" + ascii + "|")
         }
-        print("------")
+        print("-------")
         print("")
     }
 
